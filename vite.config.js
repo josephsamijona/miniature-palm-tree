@@ -8,8 +8,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  preview: {
+    allowedHosts: [
+      'cassywebsite.up.railway.app',
+      '.railway.app',
+    ]
+  },
   server: {
-    port: 3000,
+    port: process.env.PORT || 3000,
     host: true, // Needed for docker
   },
   resolve: {

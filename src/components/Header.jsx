@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe2, Phone, Calendar, Search } from 'lucide-react';
+import { Menu, X, Globe2, Phone, Users, MessageSquare } from 'lucide-react';
+import logoImage from '../assets/images/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,24 +18,26 @@ const Header = () => {
   const navLinks = [
     { name: 'Services', href: '#services', icon: <Globe2 className="w-4 h-4" /> },
     { name: 'Solutions', href: '#solutions', icon: <Phone className="w-4 h-4" /> },
-    { name: 'About Us', href: '#about', icon: null },
-    { name: 'Contact', href: '#contact', icon: null },
+    { name: 'About Us', href: '#about', icon: <Users className="w-4 h-4" /> },
+    { name: 'Contact', href: '#contact', icon: <MessageSquare className="w-4 h-4" /> },
   ];
 
   const headerClass = `fixed w-full top-0 z-50 transition-all duration-300 ${
-    isScrolled ? 'bg-white shadow-md py-2' : 'bg-black/80 backdrop-blur-sm py-4'
+    isScrolled ? 'bg-white shadow-md py-3' : 'bg-black/80 backdrop-blur-sm py-5'
   }`;
 
   return (
     <header className={headerClass}>
-      <div className="container-custom">
+      <div className="container-custom mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
-              <span className={`text-2xl font-bold ${isScrolled ? 'text-primary-600' : 'text-white'}`}>
-                Cassy Bridge
-              </span>
+              <img 
+                src={logoImage} 
+                alt="Logo" 
+                className="h-20 w-auto" 
+              />
             </a>
           </div>
 
@@ -48,30 +51,10 @@ const Header = () => {
                   isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-400'
                 }`}
               >
-                {link.icon && <div className={isScrolled ? 'text-primary-600' : 'text-primary-400'}>{link.icon}</div>}
+                <div className={isScrolled ? 'text-primary-600' : 'text-primary-400'}>{link.icon}</div>
                 <span>{link.name}</span>
               </a>
             ))}
-          </div>
-
-          {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className={`flex items-center space-x-1 ${
-              isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-400'
-            }`}>
-              <Search className="w-4 h-4" />
-            </button>
-            <a 
-              href="#book" 
-              className={`btn ${
-                isScrolled 
-                  ? 'bg-primary-600 text-white hover:bg-primary-700' 
-                  : 'bg-white text-primary-600 hover:bg-gray-100'
-              }`}
-            >
-              <Calendar className="w-4 h-4 mr-2" />
-              Book Interpreter
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,16 +85,10 @@ const Header = () => {
                   className="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.icon}
+                  <div className="text-primary-600">{link.icon}</div>
                   <span>{link.name}</span>
                 </a>
               ))}
-              <div className="pt-4 border-t">
-                <a href="#book" className="btn btn-primary w-full justify-center">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Book Interpreter
-                </a>
-              </div>
             </div>
           </div>
         )}

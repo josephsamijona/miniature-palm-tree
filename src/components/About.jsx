@@ -34,7 +34,7 @@ const About = () => {
               Setting the Standard in Professional Interpretation Services
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              At Cassy Bridge Interpreting, we're dedicated to breaking down language 
+              At CGSD LOGISTICS , we're dedicated to breaking down language 
               barriers and facilitating seamless communication across cultures. Our 
               commitment to excellence and professional integrity has made us a trusted 
               partner for businesses worldwide.

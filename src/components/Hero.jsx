@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, Calendar, Phone } from 'lucide-react';
 import heroBackground from '../assets/images/hero-bg.jpg';
+import logoImage from '../assets/images/logo.png';
 
 const Hero = () => {
   return (
@@ -29,8 +29,8 @@ const Hero = () => {
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Breaking Language <br />
-              <span className="text-primary-500">Barriers</span> in Business
+              Allow us to be <br />
+              <span className="text-primary-500">your voice</span>
             </h1>
 
             {/* Description */}
@@ -38,19 +38,6 @@ const Hero = () => {
               Expert interpretation services for meetings, conferences, and events. 
               Connecting businesses worldwide with professional language solutions.
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn btn-primary group">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book an Interpreter
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="btn btn-outline text-white border-white hover:bg-white hover:text-black">
-                <Phone className="w-5 h-5 mr-2" />
-                Contact Us
-              </button>
-            </div>
 
             {/* Trust Indicators */}
             <div className="pt-8 border-t border-white/10">
@@ -77,11 +64,13 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Decorative Elements */}
-          <div className="hidden lg:block relative">
-            {/* Floating Elements */}
-            <div className="absolute -top-20 right-0 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl" />
-            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-secondary-900/20 rounded-full blur-3xl" />
+          {/* Right Column - Logo */}
+          <div className="flex justify-center items-center">
+            <img 
+              src={logoImage} 
+              alt="Logo" 
+              className="w-3/4 max-w-md h-auto" 
+            />
           </div>
         </div>
       </div>

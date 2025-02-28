@@ -12,6 +12,7 @@ export default defineConfig({
     allowedHosts: [
       'cassywebsite.up.railway.app',
       '.railway.app',
+      'cgsdlogistics.com', // Ajout de l'hôte mentionné dans l'erreur
     ]
   },
   server: {

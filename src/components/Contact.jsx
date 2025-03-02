@@ -1,13 +1,14 @@
 import React from 'react';
-import { Phone, Mail, Clock, MapPin } from 'lucide-react';
+import { Phone, Mail, Clock,  Globe2 } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
     {
-      icon: MapPin,
-      title: 'Location',
-      detail: '500 Grossman Drive #1010',
-      description: 'Braintree MA 02184'
+      icon: Globe2, // Replace MapPin with Globe2 to indicate online service
+      title: 'Virtual Service',
+      detail: 'Available Online',
+      description: '500 Grossman Drive #1010, Braintree MA 02184'
+    
     },
     {
       icon: Mail,

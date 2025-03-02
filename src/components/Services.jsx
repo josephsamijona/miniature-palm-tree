@@ -33,7 +33,7 @@ const Services = () => {
       features: [
         "Available 24/7",
         "Immediate connection to interpreters",
-        "Over 50 languages supported",
+        "Over 25 languages supported",
         "Pay-per-minute pricing"
       ]
     },
@@ -97,7 +97,7 @@ const Services = () => {
             Comprehensive Interpretation Solutions
           </h2>
           <p className="text-gray-600">
-            From on-site interpretation to remote services, we provide professional 
+            From on-site translation to remote services, we provide professional 
             language solutions tailored to your specific needs.
           </p>
         </div>

@@ -6,7 +6,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Handle scroll effect
+  // Handle scroll effect - nous gardons ceci pour détecter le défilement
+  // mais nous ne l'utiliserons pas pour changer la couleur de fond
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -22,8 +23,9 @@ const Header = () => {
     { name: 'Contact', href: '#contact', icon: <MessageSquare className="w-4 h-4" /> },
   ];
 
-  const headerClass = `fixed w-full top-0 z-50 transition-all duration-300 ${
-    isScrolled ? 'bg-white shadow-md py-3' : 'bg-black/80 backdrop-blur-sm py-5'
+  // Nous gardons le header toujours noir, mais ajoutons shadow-md lorsqu'on scrolle
+  const headerClass = `fixed w-full top-0 z-50 transition-all duration-300 bg-black/80 backdrop-blur-sm ${
+    isScrolled ? 'shadow-md py-3' : 'py-5'
   }`;
 
   return (
@@ -47,11 +49,9 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`flex items-center space-x-1 hover-lift ${
-                  isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-400'
-                }`}
+                className="flex items-center space-x-1 hover-lift text-white hover:text-primary-400"
               >
-                <div className={isScrolled ? 'text-primary-600' : 'text-primary-400'}>{link.icon}</div>
+                <div className="text-primary-400">{link.icon}</div>
                 <span>{link.name}</span>
               </a>
             ))}
@@ -60,11 +60,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`md:hidden p-2 rounded-lg ${
-              isScrolled 
-                ? 'hover:bg-gray-100 text-gray-900' 
-                : 'hover:bg-white/10 text-white'
-            }`}
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 text-white"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6" />
@@ -76,16 +72,16 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg animate-fade-in">
+          <div className="md:hidden absolute top-full left-0 w-full bg-black/90 shadow-lg animate-fade-in">
             <div className="py-4 space-y-2 px-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="flex items-center space-x-2 py-2 text-gray-700 hover:text-primary-600"
+                  className="flex items-center space-x-2 py-2 text-white hover:text-primary-400"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <div className="text-primary-600">{link.icon}</div>
+                  <div className="text-primary-400">{link.icon}</div>
                   <span>{link.name}</span>
                 </a>
               ))}

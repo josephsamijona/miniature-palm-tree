@@ -30,7 +30,7 @@ const Hero = () => {
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Allow us to be <br />
-              <span className="text-primary-500">your voice</span>
+              <span className="text-white">your voice</span>
             </h1>
 
             {/* Description */}
@@ -50,7 +50,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-12 h-12 bg-primary-500/10 rounded-full flex items-center justify-center">
-                    <span className="text-primary-500 font-bold">50+</span>
+                    <span className="text-primary-500 font-bold">25+</span>
                   </div>
                   <span>Expert Interpreters</span>
                 </div>

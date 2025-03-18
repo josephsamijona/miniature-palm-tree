@@ -19,7 +19,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      detail: '',
+      detail: '+1 (774) 564-8187',
       description: 'Available 24/7 for urgent requests'
     },
     {
